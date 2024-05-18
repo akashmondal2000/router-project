@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,14 +22,14 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="/" className="hover:underline">
+                  <NavLink to="/" className={({isActive})=>`${isActive ? "text-orange-600" : "text-gray-600"}`}>
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline">
+                  <NavLink to="/about" className={({isActive})=>`${isActive? "text-orange-600":"text-gray-600"}`}>
                     About
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -40,7 +40,7 @@ const Footer = () => {
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/hiteshchoudhary"
+                    href="https://github.com/akashmondal2000"
                     className="hover:underline"
                     target="_blank"
                     rel="noreferrer"
