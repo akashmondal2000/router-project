@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Layout from './Layout.jsx'
 // import path from 'path'
-import { About,Home,Contact , User} from './components/index.js';
+import { About,Home,Contact , User,Github} from './components/index.js';
 
 
 // const router = BrowserRouter([
@@ -32,6 +32,11 @@ const router = createBrowserRouter(
     <Route path='about' element={<About/>}/>
     <Route path='contact' element={<Contact/>}/>
     <Route path='user/:userid' element={<User/>}/>
+    <Route
+     path='gitHub' 
+     element={<Github/>}
+      
+     />
 
     </Route>
   )
