@@ -6,6 +6,7 @@ import { BrowserRouter, Route, RouterProvider, createBrowserRouter, createRoutes
 import Layout from './Layout.jsx'
 // import path from 'path'
 import { About,Home,Contact , User,Github} from './components/index.js';
+import { githubInfoLoader } from './components/Github/Github.jsx'
 
 
 // const router = BrowserRouter([
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
     <Route path='contact' element={<Contact/>}/>
     <Route path='user/:userid' element={<User/>}/>
     <Route
+    loader={githubInfoLoader}
      path='gitHub' 
      element={<Github/>}
       

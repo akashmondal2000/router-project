@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const Github = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("https://api.github.com/users/akashmondal2000")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setData(data)
-      }
-        
-    );
-  }, []);
+    const data = useLoaderData()
   return (
     <div className="text-center bg-red-600 text-white font-bold">
       Github followers : {data.followers}
@@ -21,3 +12,8 @@ const Github = () => {
 };
 
 export default Github;
+
+export const githubInfoLoader = async ()=>{
+ const responce = await fetch("https://api.github.com/users/akashmondal2000")
+ return responce.json();
+}
